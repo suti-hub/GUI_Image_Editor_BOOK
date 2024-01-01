@@ -2,6 +2,9 @@
 電子書籍「PythonでGUIを作りたい　仕様検討から実装まではじめての動画・静止画編集ソフト」  
 ソースコード一式
 
+# 電子書籍
+[https://www.amazon.co.jp/dp/B0CR8KWYH8](https://www.amazon.co.jp/dp/B0CR8KWYH8)
+
 ---
 
 ### 1. 概要
