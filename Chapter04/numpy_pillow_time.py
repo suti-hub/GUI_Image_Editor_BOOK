@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 from PIL import Image, ImageOps
 import time
 
-# ファイルパス（正しいパスに書き換え）
-file_path = 'D:/note/TEST/sample00.jpg'
+# File path(測定対象の画像ファイルのパス)
+file_path = '../Chapter03/TEST/image_00.jpg'
 print('=== Pillow ===')
 print('-----------------')
 # 画像リード
