@@ -28,7 +28,7 @@ class ViewGUI():
         # メインウィンドウサイズ指定
         self.window_root.geometry("800x650") # W x H
         # メインウィンドウタイトル
-        self.window_root.title('GUI Image Editor v1.2.1')
+        self.window_root.title('GUI Image Editor v1.3.1')
         
         # サブウィンドウ
         self.window_sub_ctrl1     = tk.Frame(self.window_root, height=300, width=300)
@@ -66,6 +66,7 @@ class ViewGUI():
         for n in range(3):
             self.radio_intvar.append(tk.IntVar())
         self.bar_position   = tk.IntVar()
+        self.bar_progress   = tk.IntVar()
     
         
         # GUIウィジェット・イベント登録
@@ -122,7 +123,8 @@ class ViewGUI():
         self.button_step    = tk.Button(self.window_sub_ctrl4, text = 'Step',    width=7, command=self.event_step)
         self.button_capture = tk.Button(self.window_sub_ctrl4, text = 'Capture', width=7, command=self.event_capture)
         self.button_speed   = tk.Button(self.window_sub_ctrl4, text = self.speed_text[1], width=7, command=self.event_speed)
-        
+        # ProgressBar生成
+        self.progress_bar   = ttk.Progressbar(self.window_root, length=200, maximum=100, mode="determinate", variable=self.bar_progress)
         
         # ボタン生成
         self.btn_rotate = []
@@ -204,8 +206,9 @@ class ViewGUI():
         self.label_frame[0].place(relx=0.44, rely=0.36)
         self.label_frame[1].place(relx=0.44, rely=0.79)
         label_barunit.place      (relx=0.90, rely=0.85)
-        label_msg.place          (relx=0.69, rely=0.90)
-        self.label_msgtxt.place  (relx=0.70, rely=0.94)
+        label_msg.place          (relx=0.69, rely=0.80)
+        self.label_msgtxt.place  (relx=0.70, rely=0.84)
+        self.progress_bar.place  (relx=0.70, rely=0.88)
         # Slide bar(Scale)
         self.bar_scale.place     (relx=0.08, rely=0.85)
         
@@ -232,8 +235,10 @@ class ViewGUI():
         
         if self.select_tab == '[Video]':
             self.button_drop.grid(row=9, column=3, padx=5, pady=5, sticky=tk.W)
+            self.progress_bar.place(relx=0.70, rely=0.88)
         else:
             self.button_drop.grid_forget()
+            self.progress_bar.place_forget()
     
             
     def get_save_args(self):
@@ -476,14 +481,16 @@ class ViewGUI():
         
         if is_save_status:
             progress = (cur_num/total_num)*100
-            msgtxt   = '{}/{} Saving.. {:.0f} %'.format(cur_num, total_num, progress)
+            msgtxt   = '{}/{} frames saving.. {:.0f} %'.format(cur_num, total_num, progress)
             self.set_message(msgtxt)
+            self.bar_progress.set(progress)
             
         else:
             self.control.ClearCanvas()
             self.control.ForceToState('STOP')
             self.clear_message()
             self.enable_tab()
+            self.bar_progress.set(0)
             
     
     def event_update_bar(self, val):

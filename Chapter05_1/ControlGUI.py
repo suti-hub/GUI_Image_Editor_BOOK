@@ -20,10 +20,7 @@ class ControlGUI():
         self.clip_ey       = 0
         self.canvas        = {}
         self.frame         = {}
-        
-        self.output_path = os.path.join('./','output')
-        if not os.path.exists(self.output_path):
-            os.makedirs(self.output_path)
+        self.output_path   = './'
             
         # Model Class生成
         self.model['Photo'] = ModelPhoto(self.output_path)

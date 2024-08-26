@@ -140,8 +140,8 @@ class ModelVideo(ModelImage):
             img_conv      = cv2.cvtColor(self.video_img, cv2.COLOR_BGR2RGB)
             self.pil_img  = Image.fromarray(img_conv)
         
-        name, ext     = os.path.splitext(self.file_name)
-        file_path     = '{}/{}_{:05}.png'.format(self.output_path, name, self.cur_frame)        
+        fname, ext     = os.path.splitext(self.file_name)
+        file_path     = '{}_{:05}.png'.format(fname, self.cur_frame)        
         self.pil_img.save(file_path)
         print("[{}] Saved: {}".format(self.canvas_tag, file_path))
         
@@ -250,7 +250,7 @@ class ModelVideo(ModelImage):
         if self.cap != None:
             self.cap.release()
         # 動画再生初期設定
-        self.file_name  = os.path.basename(fname)
+        self.file_name  = fname
         self.cap        = cv2.VideoCapture(fname)
         self.frame_num  = int(self.cap.get(cv2.CAP_PROP_FRAME_COUNT))
         self.fps        = int(self.cap.get(cv2.CAP_PROP_FPS))

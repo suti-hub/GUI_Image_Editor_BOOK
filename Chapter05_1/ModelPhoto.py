@@ -57,10 +57,9 @@ class ModelPhoto(ModelImage):
     def Save(self, file_path):
         
         if self.edit_img != None:
-            name, ext   = os.path.splitext(file_path)
+            fname, ext  = os.path.splitext(file_path)
             dt          = datetime.now()
-            file_name   = os.path.basename(name) + '_' + dt.strftime('%H%M%S') + '.png'
-            file_path   = os.path.join(self.output_path, file_name)
+            file_path   = fname + '_' + dt.strftime('%H%M%S') + '.png'
 
             self.edit_img.save(file_path)
             print("Saved: {}".format(file_path))

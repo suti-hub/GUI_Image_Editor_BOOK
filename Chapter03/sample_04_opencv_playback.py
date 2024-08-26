@@ -13,7 +13,7 @@ fps    = int(cap.get(cv2.CAP_PROP_FPS))
 num_frames = int(fps*5)
 
 cur_frame = 0
-while cur_frame < num_frames:
+while cur_frame <= num_frames:
     # フレーム取得
     ret, frame = cap.read()
     # フレーム取得できなかった場合は終了
@@ -22,7 +22,7 @@ while cur_frame < num_frames:
     # BGR->RGB変換
     img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     # フレーム表示
-    title = f'{cur_frame}/{frames} frames, {fps} fps'
+    title = f'{cur_frame}/{num_frames} frames, {fps} fps'
     plt.title(title)
     plt.imshow(img)
     plt.show()

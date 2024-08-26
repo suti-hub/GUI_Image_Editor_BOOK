@@ -22,7 +22,7 @@ video_format = cv2.VideoWriter_fourcc(*'mp4v')
 video  = cv2.VideoWriter(save_path, video_format, fps, (width, height))
 
 cur_frame = fno_sp
-while cur_frame < fno_ep+1:
+while cur_frame <= fno_ep:
     # フレーム取得
     ret, frame = cap.read()
     # フレーム取得できなかった場合は終了

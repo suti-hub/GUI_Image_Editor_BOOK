@@ -16,17 +16,17 @@
 
 #### Chapter02
 
-2章　簡易電卓アプリのサンプルコード、写真・動画のサンプル（TEST用）
+2章　簡易電卓アプリのサンプルコード
 
 
 #### Chapter03
 
-3章　各種ライブラリのサンプルコード一式
+3章　各種ライブラリのサンプルコード一式、写真・動画のサンプル（TEST用）
 
 
 #### Chapter04
 
-4章　静止画編集ソフトのコード一式、テストコードのサンプル
+4章　静止画編集ソフトのコード一式、テストコードのサンプル、ファイルサンプル（TEST用）
 
 
 #### Chapter05_1
@@ -43,59 +43,66 @@
 
 ```
 GUI_Image_Editor_BOOK
-    │  
-    ├─Chapter01
-    │      test_package_version.py
-    │      
-    ├─Chapter02
-    │      sample_calculator.py
-    │      
-    ├─Chapter03
-    │  │  sample_00_tkinter.py
-    │  │  sample_01_os.py
-    │  │  sample_02_pillow.py
-    │  │  sample_03_numpy.py
-    │  │  sample_04_opencv_playback.py
-    │  │  sample_05_opencv_record.py
-    │  │  sample_06_image_viewer.py
-    │  │  sample_07_video_recorder.py
-    │  │  
-    │  └─TEST
-    │          image_00.jpg
-    │          image_00.png
-    │          video_00.mp4
-    │          
-    ├─Chapter04
-    │      ViewGUI.py
-    │      ControlGUI.py
-    │      ModelImage.py
-    │      numpy_pillow_time.py
-    │      pytest_get_file.py
-    │      test_state_machine_01.py
-    │      
-    ├─Chapter05_1
-    │      ViewGUI.py
-    │      ControlGUI.py
-    │      ModelImage.py
-    │      ModelPhoto.py
-    │      ModelVideo.py
-    │      test_state_machine_02.py
-    │      
-    └─Chapter05_2
-            ViewGUI.py
-            ControlGUI.py
-            ModelImage.py
-            ModelPhoto.py
-            ModelVideo.py
+│
+├─Chapter01
+│      test_package_version.py
+│
+├─Chapter02
+│      sample_calculator.py
+│
+├─Chapter03
+│  │  sample_00_tkinter.py
+│  │  sample_01_os.py
+│  │  sample_02_pillow.py
+│  │  sample_03_numpy.py
+│  │  sample_04_opencv_playback.py
+│  │  sample_05_opencv_record.py
+│  │  sample_06_image_viewer.py
+│  │  sample_07_video_recorder.py
+│  │
+│  └─TEST
+│          image_00.jpg
+│          image_00.png
+│          video_00.mp4
+│
+├─Chapter04
+│  │  ControlGUI.py
+│  │  ModelImage.py
+│  │  numpy_pillow_time.py
+│  │  pytest_get_file.py
+│  │  test_state_machine_01.py
+│  │  ViewGUI.py
+│  │
+│  └─test_dir
+│          00_file.txt
+│          01_file.txt
+│          02_file.txt
+│          03_file.txt
+│          04_file.txt
+│
+├─Chapter05_1
+│      ControlGUI.py
+│      ModelImage.py
+│      ModelPhoto.py
+│      ModelVideo.py
+│      test_state_machine_02.py
+│      ViewGUI.py
+│
+└─Chapter05_2
+        ControlGUI.py
+        ModelImage.py
+        ModelPhoto.py
+        ModelVideo.py
+        ViewGUI.py
         
 ```
 
 ### 3. 評価環境
 
 - OS：Windows 10  
-- プログラム言語：Python 3.8.10  
-- パッケージ管理：pip 23.1.2  
-- プログラム実行・デバッグ環境：Spyder 4.1.5
+- プログラム言語：Python 3.12.5  
+- パッケージ管理：pip 24.2 
+- プログラム実行・デバッグ環境：Spyder 5.4.3
 
 ---
 
